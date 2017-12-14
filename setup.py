@@ -7,7 +7,7 @@ with open('README.md') as fp:
 
 setup(
     name='py-registry',
-    version='0.1.0',
+    version='0.1.1',
     description='Python Class Registry',
     long_description=long_description,
     author='Hasan Basri',
@@ -16,6 +16,7 @@ setup(
     keywords='Python Class Registry',
     url='https://github.com/hbasria/py-registry',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    install_requires=['py_dictutils~=0.1.0'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
