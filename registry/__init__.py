@@ -4,9 +4,8 @@ from dictutils import OrderedAttrDict
 
 
 class Registry(OrderedAttrDict):
-
     def register_decorator(self, **kwargs):
-        name = kwargs.get('name')
+        name = kwargs.get("name")
 
         def decorator(decorated):
             self.register_func(data=decorated, name=name)
@@ -33,8 +32,10 @@ class Registry(OrderedAttrDict):
 
         else:
             raise ValueError(
-                "Cannot deduce name from given object ({0}). Please user registry.register() with a 'name' argument.".format(
-                    data))
+                "Cannot deduce name from given object ({}). Please user registry.register() with a 'name' argument.".format(
+                    data
+                )
+            )
 
     def validate(self, data):
         """
@@ -52,9 +53,7 @@ class Registry(OrderedAttrDict):
             self[name] = data
         else:
             raise ValueError(
-                "{0} (type: {0.__class__}) is not a valid value for {1} registry".format(data, self.__class__))
-
-
-
-
-
+                "{0} (type: {0.__class__}) is not a valid value for {1} registry".format(
+                    data, self.__class__
+                )
+            )
